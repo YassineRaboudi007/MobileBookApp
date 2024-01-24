@@ -1,17 +1,43 @@
-This is a bestselling book app that utilizes the New York Times Books API to display the bestseller books for each category for the current week. The app consists of three screens: a welcome fragment, a book list fragment, and a book details fragment, as shown in the screenshots below:
+# Bestselling Books App
 
+Welcome to the Bestselling Books App! 📚 This application utilizes the New York Times Books API to showcase the latest bestselling books. Explore both the latest releases and delve into an extensive all-time database.
+
+## Screenshots
 <p align="center">
-  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/fa0b1aea-64af-4dc0-9382-e7c07610a160" alt="Welcome Fragment">
-  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/3bbfc6fe-4dce-4b03-8fcf-fdcbd1f57d3d" alt="Book List Fragment">
-  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/501b762f-3c22-4bb3-a7a1-900f498bc519" alt="Book Details Fragment">
+  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/feaa08ec-ead8-42fc-844b-680c6ded63e9" alt="Welcome Fragment" width="300">
+  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/c0da3ffe-d518-4167-9604-836cfa197bc6" alt="Book List Fragment" width="300">
 </p>
 
-The app implements navigation in Kotlin for cleaner and more maintainable code, as depicted in the screenshot below:
-
+## Welcome Section
+Begin your journey with a warm welcome and easily navigate to the BookListFragment. Fetch category data via API and pass it to the fragment using a ViewModel LiveData. When the LiveData updates, execute another API query for the bestselling books, displayed in a RecyclerView.
 <p align="center">
-  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/8e699003-3094-4c70-9af1-8be0e3a20d1e" alt="Navigation">
+  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/43b9012a-a03c-4197-a6ce-8336d713af52" alt="Welcome Fragment" width="300">
 </p>
 
-The app comprises five fragments, including the three mentioned above. Two additional fragments handle specific scenarios. The first one is displayed when there is a loss of connection, implemented using the native Connectivity Manager provided by Android. A custom callback function is defined to execute whenever the connection state changes. This state is then stored in a ConnectivityViewModel, which is observed in the main activity. The app switches fragments based on the current state value.
+Click on any book to view details and make a purchase through the provided link.
 
-The second additional fragment is the BookListDetailsFragment, utilized in the BookListAdapter to display individual items in the RecyclerView. Data from the API is obtained via a ViewModel with access to the BooksAPI defined using Retrofit. The data is observed as it is populated via the API, and then passed to the RecyclerView for handling the display of data.
+<p align="center">
+  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/e87fa9db-c16b-4f4d-afea-b82b360c5d21" alt="Welcome Fragment" width="300">
+</p>
+
+## Search Section
+Use the DatePicker to select date values and retrieve data from the API. Explore books categorized by date in a nested RecyclerView. Click on a book to view details.
+
+<p align="center">
+  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/db859fcd-842d-41c3-a197-4a41d9ed9430" alt="Welcome Fragment" width="300">
+</p>
+## Error Handling
+Experience seamless error handling. If the connection is lost, the app switches to an error fragment, returning to the previous state when the connection is restored.
+
+<p align="center">
+  <img src="https://github.com/YassineRaboudi007/MobileBookApp/assets/93160741/2a33b909-6be6-4dc6-8af2-da03dc198c05" alt="Welcome Fragment" width="300">
+</p>
+## Technology Highlights
+
+### ViewModel
+Implementing the Android Architecture Components ViewModel ensures efficient management and persistence of UI-related data. Handle data lifecycle changes and ensure data consistency between UI components.
+
+### Adapters
+Employing Adapters enhances the RecyclerView implementation, efficiently binding data to the user interface for smooth scrolling and optimized performance.
+
+Feel free to explore the app, discover new books, and dive into the world of literature with our Bestselling Books App! 📖
